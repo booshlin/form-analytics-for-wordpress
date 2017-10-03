@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -44,8 +43,8 @@ class Plugin_Name_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param    string $plugin_name       The name of the plugin.
+	 * @param    string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -97,6 +96,16 @@ class Plugin_Name_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+
+	    global $post;
+
+		$data = array(
+		    'debug' => 1,
+    		'slug'  => $post->post_name,
+		);
+
+		// TODO - Eventually do excludeByID, ExcludeByRole.
+		wp_localize_script( $this->plugin_name, 'boosh_form_config', $data );
 
 	}
 
