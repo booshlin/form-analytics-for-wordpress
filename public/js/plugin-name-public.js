@@ -66,12 +66,10 @@ function _err(s) {
 
 var BooshForm = {
 
-	dom : null,
-
+	dom  : null,
 	name : "",
-
-	// 
-	type : "", 
+	type : "",
+	status : 0,
 
 	events : {
 		visibilityPartial  : false,
@@ -87,6 +85,7 @@ var BooshForm = {
 	},
 
 	setName : function( slug, id, name, role, key ) {
+		"use strict";
 
 		slug = slug === undefined || slug === null ? "" : slug + "_";
 		id   = id   === undefined || id   === null ? "" : id   + "_";
@@ -105,6 +104,7 @@ var BooshForm = {
 	},
 
 	record : function ( type ) {
+		"use strict";
 
 		switch( type ) {
 			case 'fieldFocus':
@@ -131,6 +131,7 @@ var BooshForm = {
 			case 'submitAttempt':
 				// Can be submitted more than once.
 				this.events.submitAttempt = true;
+				this.status = 1;
 				this.trigger( type );
 				break;
 
@@ -148,6 +149,7 @@ var BooshForm = {
 	},
 
 	trigger : function ( type ) {
+		"use strict";
 
 		_log( this.name + ': Event ' + type + ' firing.' );
 
@@ -168,8 +170,9 @@ var BooshForm = {
 	},
 
 	findType : function () {
+		"use strict";
 
-		classes = this.dom.className.split(' ');
+		var classes = this.dom.className.split(' ');
 		if ( classes.indexOf('wpcf7-form') !== -1 ) {
 			return 'wpcf7-form';
 		}
@@ -178,11 +181,9 @@ var BooshForm = {
 	},
 
 	setType : function ( type ) {
+		"use strict";
+
 		this.type = type;
-	},
-
-	isType : function ( type ) {
-
 	},
 
 	cumulativeOffset: function(element) {
@@ -191,14 +192,14 @@ var BooshForm = {
 	    var top = 0, left = 0;
 
 	    do {
-	        top += element.offsetTop  || 0;
-	        left += element.offsetLeft || 0;
+	        top    += element.offsetTop  || 0;
+	        left   += element.offsetLeft || 0;
 	        element = element.offsetParent;
-	    } while(element);
+	    } while ( element );
 
 	    return {
-	        top: top,
-	        left: left
+	        top  : top,
+	        left : left
 	    };
 	}
 };
@@ -209,7 +210,6 @@ boosh.formManager = boosh.formManager || {
 
 	forms  : [],
 	isInit : false,
-	e : null,
 
 	getGA : function () {
 
@@ -352,31 +352,43 @@ boosh.formManager = boosh.formManager || {
 		"use strict";
 
 		jQuery( document ).ajaxComplete( function ( e, r, s ) {
+				console.log('testing');
+				console.log(e);
+				console.log(r);
+				console.log(s);
 				e.preventDefault();
 
 				if(s.type != "POST") {
+					_log('not post');
 					return;
 				}
 
 				if(s.url.indexOf("/feedback") == -1) {
+					_log('not feedback');
 					return;
 				}
+
 
 				var form = e.currentTarget.activeElement.parentElement.parentElement;
 
 				jQuery.each( boosh.formManager.forms, function( index, booshForm ) {
 
-					if(form == booshForm.dom) {
+					
+					if ( form == booshForm.dom || booshForm.status == 1 ) {
 
 						var classes = booshForm.dom.className.split(' ');
-						console.log(classes);
-						if( classes.indexOf( 'sent' ) !== -1) {
+
+						if ( classes.indexOf( 'sent' ) !== -1 ) {
+							_log('sent');
 							booshForm.record( 'submitSuccess' );
 						}
 
-						if( classes.indexOf( 'invalid' ) ) {
+						if ( classes.indexOf( 'invalid' )  !== -1 ) {
+							_log('invalid');
 						//	booshForm.record( 'submitFailure' );
 						}
+
+						booshForm.status = 0;
 					}
 				});
 		});
@@ -430,10 +442,10 @@ boosh.formManager = boosh.formManager || {
 	}
 };
 
-
+//
+// 
+//
 jQuery( function() {
 	_log( 'DOM ready' );
  	boosh.formManager.init();
 });
-
-
