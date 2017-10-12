@@ -1,0 +1,21 @@
+{
+  "name": "booshlin/form-analytics-for-wordpress",
+  "type": "wordpress-plugin",
+  "keywords": ["wordpress", "plugin", "forms", "analytics"],
+  "license": "MIT",
+  "description": "",
+  "homepage": "https://github.com/booshlin/form-analytics-for-wordpress/new/master",
+  "authors": [
+    {
+      "name": "Nick Breslin",
+      "email": "nickbreslin@gmail.com",
+      "homepage": "https://github.com/nickbreslin"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+  }
+}
