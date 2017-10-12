@@ -352,10 +352,7 @@ boosh.formManager = boosh.formManager || {
 		"use strict";
 
 		jQuery( document ).ajaxComplete( function ( e, r, s ) {
-				console.log('testing');
-				console.log(e);
-				console.log(r);
-				console.log(s);
+
 				e.preventDefault();
 
 				if(s.type != "POST") {
@@ -367,7 +364,6 @@ boosh.formManager = boosh.formManager || {
 					_log('not feedback');
 					return;
 				}
-
 
 				var form = e.currentTarget.activeElement.parentElement.parentElement;
 
