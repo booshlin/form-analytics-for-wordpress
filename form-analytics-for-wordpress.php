@@ -12,15 +12,15 @@
  * @package           Form_Analytics
  *
  * @wordpress-plugin
- * Plugin Name:       Form Analytics
+ * Plugin Name:       Form Analytics for WordPress by Booshlin
  * Plugin URI:        http://example.com/plugin-name-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       .
  * Version:           1.0.0
- * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Author:            Booshlin
+ * Author URI:        https://www.booshlin.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       plugin-name
+ * Text Domain:       form-analytics
  * Domain Path:       /languages
  */
 
