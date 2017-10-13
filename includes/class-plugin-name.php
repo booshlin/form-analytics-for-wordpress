@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -9,8 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    Form_Analytics
+ * @subpackage PluForm_Analytics/includes
  */
 
 /**
@@ -150,7 +149,6 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
