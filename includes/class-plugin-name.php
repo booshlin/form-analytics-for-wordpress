@@ -9,7 +9,7 @@
  * @since      1.0.0
  *
  * @package    Form_Analytics
- * @subpackage PluForm_Analytics/includes
+ * @subpackage Form_Analytics/includes
  */
 
 /**
@@ -74,7 +74,7 @@ class Plugin_Name {
 		$this->plugin_name = 'form-analytics';
 
 		$this->load_dependencies();
-		$this->set_locale();
+		//$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
@@ -125,22 +125,6 @@ class Plugin_Name {
 
 	}
 
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-
-		$plugin_i18n = new Plugin_Name_i18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
-	}
 
 	/**
 	 * Register all of the hooks related to the admin area functionality
