@@ -72,7 +72,7 @@ class Plugin_Name {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'plugin-name';
+		$this->plugin_name = 'form-analytics';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -150,6 +150,7 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 * @access   private
 	 */
+	
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
