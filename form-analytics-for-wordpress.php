@@ -7,13 +7,13 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              https://www.booshlin.com
  * @since             1.0.0
  * @package           Form_Analytics
  *
  * @wordpress-plugin
  * Plugin Name:       Form Analytics for WordPress by Booshlin
- * Plugin URI:        http://example.com/plugin-name-uri/
+ * Plugin URI:        https://www.booshlin.com/form-analytics/
  * Description:       .
  * Version:           1.0.0
  * Author:            Booshlin
@@ -36,7 +36,7 @@ define( 'FORM_ANALYTICS_VERSION', '1.0.0' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-form-analytics.php';
 
 /**
  * Begins execution of the plugin.
@@ -47,10 +47,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_form_analytics() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new Form_Analytics();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_form_analytics();
