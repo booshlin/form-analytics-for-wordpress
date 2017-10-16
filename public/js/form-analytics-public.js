@@ -319,7 +319,7 @@ boosh.formManager = boosh.formManager || {
 
 	validate :  function( forms ) {
 
-		for ( var i = 0 ; i < forms.length ; i++ ) {
+		for ( var i = 1 ; i <= forms.length ; i++ ) {
 
 			var form = forms[i];
 			var booshForm = jQuery.extend( true, {}, BooshForm );
