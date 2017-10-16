@@ -52,7 +52,7 @@ Roadmap
 This section describes how to install the plugin and get it working.
 
 1. Install Google Analytics
-2. https://support.google.com/analytics/answer/1008080?hl=en
+  1. https://support.google.com/analytics/answer/1008080?hl=en
 
 e.g.
 
