@@ -9,7 +9,7 @@
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Google Analytics events for better mess
+Add new Google Analytics events for messaging form engagement and usage.
 
 ## Description
 
