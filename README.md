@@ -2,7 +2,7 @@
 
 * Contributors: booshlin
 * Donate link: http://www.booshlin.com/donate/
-* Tags: analytics, forms, google analytics, 
+* Tags: analytics, forms, google analytics
 * Requires at least: 3.0.1
 * Tested up to: 4.8
 * Stable tag: 1.0
