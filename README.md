@@ -1,7 +1,9 @@
 # Form Analytics for WordPress by Booshlin
 
 Contributors: booshlin
-Donate link: httpw://www.booshlin.com/
+
+Donate link: http://www.booshlin.com/
+
 Tags: analytics, forms, google analytics, 
 Requires at least: 3.0.1
 Tested up to: 4.8
