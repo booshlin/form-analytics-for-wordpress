@@ -26,7 +26,7 @@ An event will be appear in Google Analytics:
 * action is the event listed below.
 * label is the form name
 
-### Events Actions:
+### Events Actions: 
 
 **visibilityPartial**
 * The top of the form enters the browser's viewable area.
@@ -42,6 +42,8 @@ An event will be appear in Google Analytics:
 
 **submitSuccess**
 * The form submit validates and returns a success response.
+
+Events fire once per form, except for submitAttempt.
 
 ### Event Label:
 
