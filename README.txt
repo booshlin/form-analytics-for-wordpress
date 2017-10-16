@@ -1,37 +1,66 @@
-=== Form Analytics for WordPress by Booshlin ===
+# Form Analytics for WordPress by Booshlin
+
 Contributors: booshlin
-Donate link: httpw://www.booshlin.com/
-Tags: analytics, forms, google analytics, 
+Donate link: http://www.booshlin.com/donate/
+Tags: analytics, forms, google analytics
 Requires at least: 3.0.1
 Tested up to: 4.8
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Google Analytics events for better form
+Add new Google Analytics events for measuring form engagement and usage.
 
-== Description ==
+## Description
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Form Analytics for WordPress by Booshlin introduces new, custom events to your Google Analytics account to better understand and track form visibility, interactions and submissions on your web site.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+An event will be appear in Google Analytics:
+* category of 'Booshlin Form Events'
+* action is the event listed below.
+* label is the form name
 
-Events:
+### Events Actions
 
-* 
+Events fire once per form, except for submitAttempt.
 
-Features:
+**visibilityPartial**
+* The top of the form enters the browser's viewable area.
+
+**visibilityComplete**
+* The bottom of the form enters the browser's viewable area.
+
+**fieldFocus**
+* A form field is clicked.
+
+**submitAttempt**
+* The submit button of the form is clicked.
+
+**submitSuccess**
+* The form submit validates and returns a success response.
+
+### Event Label
+
+Event label will be a unique id for this form, composed of:
+* WordPress page slug
+* form id (if present)
+* form name (if present)
+* form role (if present)
+* id number based off the number of forms on page
+
+`homepage_signup_1` would be the label of the first form, a signup form on your web site's homepage.
+
+## Features:
 
 * Compatible with multiple forms on a page at a time.
 * Excludes adminbar and search forms.
 
 
-Compatible with:
+## Compatible with:
 
 * Contact Form 7
 
-Roadmap
+### Compatibility Roadmap (in no particular order)
 
 * Ninja Forms
 * WPForms
@@ -39,42 +68,18 @@ Roadmap
 * Pirate Forms
 * Formidable Pro
 
-== Installation ==
+## Installation
 
 This section describes how to install the plugin and get it working.
 
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. [Set up Google analytics tracking](https://support.google.com/analytics/answer/1008080?hl=en)
+	1. Install it on your web site through your theme or a plugin
+1. Upload contents of `form-analytics-for-wordpress` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
-== Frequently Asked Questions ==
 
-= A question that someone might have =
+## Changelog
 
-An answer to that question.
+### 1.0
 
-= What about foo bar? =
-
-Answer to foo bar dilemma.
-
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
-
-== Changelog ==
-
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+* Contact Form 7 compatible
