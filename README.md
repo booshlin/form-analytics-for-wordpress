@@ -26,7 +26,7 @@ An event will be appear in Google Analytics:
 * action is the event listed below.
 * label is the form name
 
-Events Actions:
+### Events Actions:
 
 * visibilityPartial
 	* The top of the form enters the browser's viewable area.
@@ -39,7 +39,7 @@ Events Actions:
 * submitSuccess
 	* The form submit validates and returns a success response.
 
-Event Label:
+### Event Label:
 
 Event label will be a unique id for this form, composed of:
 * WordPress page slug
