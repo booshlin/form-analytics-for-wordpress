@@ -28,9 +28,9 @@ An event will be appear in Google Analytics:
 
 ### Events Actions:
 
-* visibilityPartial
+*visibilityPartial*
 	* The top of the form enters the browser's viewable area.
-* visibilityComplete
+*visibilityComplete*
 	* The bottom of the form enters the browser's viewable area.
 * fieldFocus
 	* A form field is clicked.
