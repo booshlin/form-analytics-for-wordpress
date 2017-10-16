@@ -9,7 +9,7 @@
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add new Google Analytics events for messaging form engagement and usage.
+Add new Google Analytics events for measuring form engagement and usage.
 
 ## Description
 
