@@ -51,37 +51,28 @@ Roadmap
 
 This section describes how to install the plugin and get it working.
 
+1. Install Google Analytics
+2. https://support.google.com/analytics/answer/1008080?hl=en
+
 e.g.
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload contents of `plugin-name.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
 ## Frequently Asked Questions
 
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
+### What about foo bar?
 
 Answer to foo bar dilemma.
 
-## Screenshots
+## Changelog
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+### 1.0
 
-== Changelog ==
-
-= 1.0 =
 * A change since the previous version.
 * Another change.
 
-== Arbitrary section ==
+## Arbitrary section
 
 You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
 plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
