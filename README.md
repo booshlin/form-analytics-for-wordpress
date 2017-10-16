@@ -28,15 +28,19 @@ An event will be appear in Google Analytics:
 
 ### Events Actions:
 
-*visibilityPartial*
+**visibilityPartial**
 	* The top of the form enters the browser's viewable area.
-*visibilityComplete*
+
+**visibilityComplete**
 	* The bottom of the form enters the browser's viewable area.
-* fieldFocus
+
+**fieldFocus**
 	* A form field is clicked.
-* submitAttempt
+
+**submitAttempt**
 	* The submit button of the form is clicked.
-* submitSuccess
+
+**submitSuccess**
 	* The form submit validates and returns a success response.
 
 ### Event Label:
