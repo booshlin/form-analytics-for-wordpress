@@ -1,32 +1,26 @@
 # Form Analytics for WordPress by Booshlin
 
-Contributors: booshlin
+* Contributors: booshlin
+* Donate link: http://www.booshlin.com/
+* Tags: analytics, forms, google analytics, 
+* Requires at least: 3.0.1
+* Tested up to: 4.8
+* Stable tag: 1.0
+* License: GPLv2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Donate link: http://www.booshlin.com/
-
-Tags: analytics, forms, google analytics, 
-
-Requires at least: 3.0.1
-
-Tested up to: 4.8
-
-Stable tag: 1.0
-
-License: GPLv2 or later
-
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-Google Analytics events for better form
+Google Analytics events for better mess
 
 ## Description
 
-Google Analytics events will have the category of 'Booshlin Form Events', the 
 An event will be appear in Google Analytics:
 * category of 'Booshlin Form Events'
 * action is the event listed below.
 * label is the form name
 
-### Events Actions: 
+### Events Actions
+
+Events fire once per form, except for submitAttempt.
 
 **visibilityPartial**
 * The top of the form enters the browser's viewable area.
@@ -43,9 +37,7 @@ An event will be appear in Google Analytics:
 **submitSuccess**
 * The form submit validates and returns a success response.
 
-Events fire once per form, except for submitAttempt.
-
-### Event Label:
+### Event Label
 
 Event label will be a unique id for this form, composed of:
 * WordPress page slug
@@ -55,7 +47,6 @@ Event label will be a unique id for this form, composed of:
 * id number based off the number of forms on page
 
 `homepage_signup_1` would be the label of the first form, a signup form on your web site's homepage.
-
 
 ## Features:
 
@@ -90,4 +81,3 @@ This section describes how to install the plugin and get it working.
 ### 1.0
 
 * Contact Form 7 compatible
-* 
