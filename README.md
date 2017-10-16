@@ -1,4 +1,4 @@
-=== Form Analytics for WordPress by Booshlin ===
+# Form Analytics for WordPress by Booshlin
 Contributors: booshlin
 Donate link: httpw://www.booshlin.com/
 Tags: analytics, forms, google analytics, 
@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Google Analytics events for better form
 
-== Description ==
+## Description
 
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
@@ -39,7 +39,7 @@ Roadmap
 * Pirate Forms
 * Formidable Pro
 
-== Installation ==
+## Installation
 
 This section describes how to install the plugin and get it working.
 
@@ -49,7 +49,7 @@ e.g.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
 = A question that someone might have =
 
@@ -59,7 +59,7 @@ An answer to that question.
 
 Answer to foo bar dilemma.
 
-== Screenshots ==
+## Screenshots
 
 1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
 the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
