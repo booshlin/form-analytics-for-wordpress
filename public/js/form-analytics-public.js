@@ -106,6 +106,7 @@ var BooshForm = {
 	record : function ( type ) {
 		"use strict";
 
+
 		switch( type ) {
 			case 'fieldFocus':
 				if ( this.events.fieldFocus === false ) {
@@ -190,7 +191,6 @@ var BooshForm = {
 		'use strict';
 		
 	    var top = 0, left = 0;
-
 	    do {
 	        top    += element.offsetTop  || 0;
 	        left   += element.offsetLeft || 0;
@@ -319,12 +319,16 @@ boosh.formManager = boosh.formManager || {
 
 	validate :  function( forms ) {
 
-		for ( var i = 1 ; i <= forms.length ; i++ ) {
+		for ( var i = 0 ; i <= forms.length ; i++ ) {
 
 			var form = forms[i];
 			var booshForm = jQuery.extend( true, {}, BooshForm );
 
 			booshForm.dom = form;
+
+			if (typeof form == "undefined") {
+				continue;
+			}
 
 			var position = booshForm.cumulativeOffset(form);
 
@@ -356,12 +360,12 @@ boosh.formManager = boosh.formManager || {
 				e.preventDefault();
 
 				if(s.type != "POST") {
-					_log('not post');
+					//_log('not post');
 					return;
 				}
 
 				if(s.url.indexOf("/feedback") == -1) {
-					_log('not feedback');
+					//_log('not feedback');
 					return;
 				}
 
@@ -388,8 +392,8 @@ boosh.formManager = boosh.formManager || {
 				});
 		});
 
-		jQuery.each( this.forms, function( index, booshForm ) {
 
+		jQuery.each( this.forms, function( index, booshForm ) {
 			jQuery( ':input', booshForm.dom ).not( ':input[type=submit]' ).focus( function () {
 				booshForm.record( 'fieldFocus' );
 			});

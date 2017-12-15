@@ -100,7 +100,7 @@ class Form_Analytics_Public {
 	    global $post;
 
 		$data = array(
-		    'debug' => 0,
+		    'debug' => 1,
     		'slug'  => $post->post_name,
 		);
 
