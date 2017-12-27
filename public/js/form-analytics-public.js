@@ -106,7 +106,6 @@ var BooshForm = {
 	record : function ( type ) {
 		"use strict";
 
-
 		switch( type ) {
 			case 'fieldFocus':
 				if ( this.events.fieldFocus === false ) {
@@ -170,12 +169,16 @@ var BooshForm = {
 	    _ga( 'send', params );
 	},
 
-	findType : function () {
+	findType : function (ele) {
 		"use strict";
 
 		var classes = this.dom.className.split(' ');
 		if ( classes.indexOf('wpcf7-form') !== -1 ) {
 			return 'wpcf7-form';
+		}
+
+		if ( jQuery(ele).attr('id') === "esu" ) {
+			return "esu" //easy sign up form
 		}
 
 		return "";
@@ -189,8 +192,9 @@ var BooshForm = {
 
 	cumulativeOffset: function(element) {
 		'use strict';
-		
+
 	    var top = 0, left = 0;
+	    
 	    do {
 	        top    += element.offsetTop  || 0;
 	        left   += element.offsetLeft || 0;
@@ -213,19 +217,25 @@ boosh.formManager = boosh.formManager || {
 
 	getGA : function () {
 
-		if ( typeof window.GoogleAnalyticsObject === "undefined" ) {
-	 		_err( 'No GoogleAnalyticsObject' );
-	 		return false;
+		let _ga;
+
+		if ( typeof window.GoogleAnalyticsObject === "string" ) {
+
+			let tracker = _ga;
+
+			if ( typeof window[tracker] === "undefined" ) {
+		 		return window[tracker];
+		 	}
 	 	}
 
-	 	var tracker = window.GoogleAnalyticsObject;
+	 	if ( typeof window.ga === "function" ) {
 
-	 	if ( typeof window[tracker] === "undefined" ) {
-	 		_err( 'No GoogleAnalyticsObject' );
-	 		return false;
+		 	return window.ga;
 	 	}
 
-	 	return window[tracker];
+
+		_err( 'No GoogleAnalyticsObject' );
+ 		return false;
 	},
 
 	init : function() {
@@ -244,7 +254,14 @@ boosh.formManager = boosh.formManager || {
 			return false;
 		}
 
-		_ga( this.run() );
+		if ( typeof _ga == "string" ) {
+			_ga( this.run() );
+		} else {
+			this.run();
+		}
+
+
+		
 
 		this.isInit = true;
 	},
@@ -319,16 +336,12 @@ boosh.formManager = boosh.formManager || {
 
 	validate :  function( forms ) {
 
-		for ( var i = 0 ; i <= forms.length ; i++ ) {
+		for ( var i = 0 ; i < forms.length ; i++ ) {
 
 			var form = forms[i];
 			var booshForm = jQuery.extend( true, {}, BooshForm );
 
 			booshForm.dom = form;
-
-			if (typeof form == "undefined") {
-				continue;
-			}
 
 			var position = booshForm.cumulativeOffset(form);
 
@@ -344,7 +357,7 @@ boosh.formManager = boosh.formManager || {
 
 	 		booshForm.setName(slug, id, role, name, i);
 
-	 		var type = booshForm.findType();
+	 		var type = booshForm.findType(booshForm.dom);
 	 		booshForm.setType( type );
 
 	 		_log( booshForm.name + ' validated' );
@@ -392,16 +405,27 @@ boosh.formManager = boosh.formManager || {
 				});
 		});
 
-
 		jQuery.each( this.forms, function( index, booshForm ) {
+
 			jQuery( ':input', booshForm.dom ).not( ':input[type=submit]' ).focus( function () {
 				booshForm.record( 'fieldFocus' );
 			});
 			
-			if(booshForm.type == "wpcf7-form") {
+			if ( booshForm.type == "wpcf7-form" ) {
 				jQuery( booshForm.dom ).submit( function (e) {
 					e.preventDefault();
 					booshForm.record( 'submitAttempt' );
+				});
+			}
+
+			if(booshForm.type == "esu" ) {
+				jQuery( booshForm.dom ).submit( function (e) {
+					e.preventDefault();
+					booshForm.record( 'submitAttempt' );
+
+					if ( esu_validate('esu') !== false ) {
+						booshForm.record( 'submitSuccess' );
+					}
 				});
 			}
 		});
@@ -446,5 +470,5 @@ boosh.formManager = boosh.formManager || {
 //
 jQuery( function() {
 	_log( 'DOM ready' );
- 	boosh.formManager.init();
+	boosh.formManager.init();	 	
 });
