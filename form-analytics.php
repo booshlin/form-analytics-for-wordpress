@@ -12,7 +12,7 @@
  * @package           Form_Analytics
  *
  * @wordpress-plugin
- * Plugin Name:       Form Analytics for WordPress by Booshlin
+ * Plugin Name:       Form Analytics
  * Plugin URI:        https://www.booshlin.com/form-analytics/
  * Description:       .
  * Version:           1.0.0

@@ -1,4 +1,4 @@
-# Form Analytics for WordPress by Booshlin
+# Form Analytics
 
 Contributors: booshlin
 Donate link: http://www.booshlin.com/donate/
@@ -13,7 +13,7 @@ Add new Google Analytics events for measuring form engagement and usage.
 
 ## Description
 
-Form Analytics for WordPress by Booshlin introduces new, custom events to your Google Analytics account to better understand and track form visibility, interactions and submissions on your web site.
+Form Analytics introduces new, custom events to your Google Analytics account to better understand and track form visibility, interactions and submissions on your web site.
 
 An event will be appear in Google Analytics:
 * category of 'Booshlin Form Events'
