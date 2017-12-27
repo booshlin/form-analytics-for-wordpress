@@ -8,14 +8,14 @@
  * that starts the plugin.
  *
  * @link              https://www.booshlin.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Form_Analytics
  *
  * @wordpress-plugin
  * Plugin Name:       Form Analytics
  * Plugin URI:        https://www.booshlin.com/form-analytics/
  * Description:       .
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Booshlin
  * Author URI:        https://www.booshlin.com/
  * License:           GPL-2.0+

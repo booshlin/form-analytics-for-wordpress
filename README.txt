@@ -4,13 +4,14 @@ Contributors: booshlin
 Donate link: http://www.booshlin.com/donate/
 Tags: analytics, forms, google analytics
 Requires at least: 3.0.1
-Tested up to: 4.8
-Stable tag: 1.0
+Requires PHP: 5.4
+Tested up to: 4.9
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add new Google Analytics events for measuring form engagement and usage.
-
+ 
 ## Description
 
 Form Analytics introduces new, custom events to your Google Analytics account to better understand and track form visibility, interactions and submissions on your web site.
